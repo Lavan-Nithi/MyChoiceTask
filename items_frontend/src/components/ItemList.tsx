@@ -22,7 +22,7 @@ const ItemList: React.FC<Props> = ({ onSelect, selectedId }) => {
 
   useEffect(() => {
     fetchItems();
-  }, []);
+  }, []); // Fetches items on relaod
 
   return (
     <Box

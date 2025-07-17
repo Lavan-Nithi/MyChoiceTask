@@ -18,6 +18,8 @@ interface Props {
 }
 
 const formatDateTime = (isoString: string) => {
+  // We recieve the time stamp as ISO 8601 format
+  // Function make it into huma readable
   const date = new Date(isoString);
   return date.toLocaleString();
 };
@@ -36,7 +38,7 @@ const ItemInfo: React.FC<Props> = ({ id }) => {
         toast({
           title: "Failed to load item",
           status: "error",
-          duration: 4000,
+          duration: 3000,
           isClosable: true,
         });
       }
@@ -55,15 +57,15 @@ const ItemInfo: React.FC<Props> = ({ id }) => {
         status: "success",
         duration: 3000,
         isClosable: true,
-      });
+      }); // Updating item fields
     } catch (error: any) {
       toast({
         title: "Error updating item",
         description: error.response?.data?.error || error.message,
         status: "error",
-        duration: 5000,
+        duration: 3000,
         isClosable: true,
-      });
+      }); // Error being item duplicate or connection error
     } finally {
       setIsUpdating(false);
     }

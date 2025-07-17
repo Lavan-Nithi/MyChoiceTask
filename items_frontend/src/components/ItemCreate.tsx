@@ -7,13 +7,14 @@ interface Props {
 }
 
 const ItemCreate: React.FC<Props> = ({ onCreate }) => {
-  const [name, setName] = useState("");
-  const [group, setGroup] = useState<"Primary" | "Secondary">("Primary");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [name, setName] = useState(""); // State for name entered
+  const [group, setGroup] = useState<"Primary" | "Secondary">("Primary"); // State for group selection
+  const [isSubmitting, setIsSubmitting] = useState(false); // Loading indicatior
   const toast = useToast();
 
   const handleSubmit = async () => {
     if (!name.trim()) {
+      // Ensures there is a name in field
       toast({
         title: "Name is required",
         status: "warning",
@@ -37,7 +38,7 @@ const ItemCreate: React.FC<Props> = ({ onCreate }) => {
     } catch (error: any) {
       toast({
         title: "Error creating item",
-        description: error.response?.data?.error || error.message,
+        description: error.response?.data?.error || error.message, //Error Codes
         status: "error",
         duration: 5000,
         isClosable: true,
