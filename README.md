@@ -25,7 +25,7 @@ cd MyChoiceTask
 Navigate to the backend directory and set up a virtual environment:
 
 ```bash
-cd items/backend
+cd items_backend
 python3 -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 ```
@@ -46,12 +46,16 @@ python3 manage.py runserver
 
 ### 3. Frontend Setup
 
-Navigate to the frontend directory and install dependencies:
+Using a new terminal window, navigate to the frontend directory from the root directory and install dependencies:
 
 ```bash
-cd ../item_frontend
+cd items_frontend
 npm install
 npm run dev
 ```
 
 ---
+
+## ✅ You're Ready!
+
+With both the backend and frontend running, the app should now be fully operational locally. Open site at http://localhost:5173/
