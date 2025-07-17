@@ -14,7 +14,7 @@ This project consists of two parts: the **Frontend** and the **Backend**. Follow
 ### 1. Clone the Repository
 
 ```bash
-git https://github.com/Lavan-Nithi/MyChoiceTask.git
+git clone https://github.com/Lavan-Nithi/MyChoiceTask.git
 cd MyChoiceTask
 ```
 
