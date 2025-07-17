@@ -4,10 +4,14 @@ from .models import Item
 from .serializers import ItemSerializer
 
 class ItemListCreateView(generics.ListCreateAPIView):
+    # The GET /api/items/ and POST /api/items/ requests handled here
+    # ListCreateAPIView handles allows for GET (list) and POST (create) requests
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
 class ItemDetailView(generics.RetrieveUpdateAPIView):
+    # GET /api/items/{id}/ and PATCH /api/items/{id}/ requests handled here 
+    # generics.RetrieveUpdateAPIView handles retrieving and updating a model instance
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
